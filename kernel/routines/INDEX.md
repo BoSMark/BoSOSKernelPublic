@@ -21,6 +21,8 @@ Loaded by the small Assistant entry method only when the current request trigger
 
 - **Session orientation** (`session-orientation.md`): generic opening, one-screen Executive View, re-entry, priority guidance, workspace ambiguity and session-close State hygiene.
 - **Record retrieval and growth** (`record-retrieval.md`): source-first company lookup, Context/Decision/Memory routing, historical retrieval and bounded record maintenance.
+- **Install a mission** (`install-mission.md`): add a mission this Folder does not yet have (a second agent) from the connector catalogue — connector check, kernel gate, `get_mission`, local file write, ledger update, offer to run. Triggered when the operator asks to install/add/get a named agent.
+- **Update installed missions** (`update-mission.md`): keep the instruction files of already-installed missions current with the catalogue — compare each local `mission_version` against `list_missions`, and for any behind, verify and overwrite only the BoS-owned `mission.md`/`guide.md`, never the operator's `work.md` or `outputs/`. Runs at session start after the kernel check, or on demand. The mission-level twin of `update.md`.
 
 ## Generated views
 Read-only views produced from records that already own the information. They are never saved or maintained as separate state.
@@ -45,9 +47,10 @@ Reusable expert prompts the Assistant reaches for when a Role needs depth a core
 - **BoS knowledge** (`bos-knowledge.md`): the client-side contract for drawing on the BoS community corpus at Diagnose and at Role performance — broad diagnosis-steered request, distinctiveness gate, stand down when nothing distinctive helps. The knowledge service itself is a separate BoS-controlled service outside this repo; this routine is client-side only.
 
 ## Extending the kernel: two channels that don't collide
-New capability reaches an operator two separate ways. Keep them separate.
+New capability reaches an operator three separate ways. Keep them separate.
 
 - **Kernel channel (this folder, via auto-upgrade).** New or changed routines and specialist prompts. BoS-owned, versioned by `KERNEL-VERSION`, delivered by `update.md`, replaced wholesale. Never touches operator content. This is how a capability lands in every deployed instance at once.
+- **Mission channel (installed agents, via auto-upgrade).** The instruction files of an installed mission (`mission.md`, `guide.md`). BoS-owned, versioned by each mission's `mission_version`, delivered by `update-mission.md` from the connector catalogue, replaced wholesale after a sha256 verify. Never touches the operator's `work.md`, `outputs/` or edits. This is how a refined agent reaches everyone who already downloaded it.
 - **System-package channel (operator space).** A System, for example an annual-planning system, ships with its own Roles, records and routines, installed into the operator's own `systems/`, `roles/`, `routines/`. Operator-owned, never arrives through a kernel upgrade, never overwritten by one.
 
 So an expert prompt everyone should have is a kernel specialist routine; the Roles and records a specific System needs are a System package. Promote a specialist routine into Core only if it becomes something every session depends on; otherwise it stays a specialist entry.
