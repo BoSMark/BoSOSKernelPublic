@@ -8,7 +8,7 @@ Let several people contribute to one Folder without silently overwriting accepte
 
 Read the `Collaboration:` line in `context/operator-rules.md`. It applies to this Folder only:
 
-- **solo**: one person edits it. Keep ordinary local history; do not introduce team GitHub steps.
+- **solo**: one person edits it. Keep ordinary local history; do not introduce team GitHub steps. Tell the operator plainly at setup that in solo mode everything stays local on their machine and nothing is pushed to GitHub, so they are not left waiting for a push or pull-request step that only exists in a GitHub-managed team Folder.
 - **GitHub-managed team**: several people may edit it through separate working copies while the Assistant manages the repository mechanics below.
 - **shared-folder single-writer**: several people may access a shared or synced working copy, but only one person or session edits it at a time. State plainly during setup that BoS gives no concurrency assurance in this mode.
 

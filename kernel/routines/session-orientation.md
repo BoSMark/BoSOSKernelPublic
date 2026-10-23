@@ -70,7 +70,7 @@ In a `GitHub-managed team` Folder, load `github-collaboration.md` before present
 ## Session opening and re-entry
 
 1. Open in one plain line with the company OS, intended Folder and that you are the BoS OS Assistant.
-2. If `context/company.md` is absent and there are no Missions, load `bootstrap.md` instead of showing an empty view.
+2. If `.bos-onboarding.md` is present (a freshly downloaded, pre-seeded OS whose company draft is not yet confirmed), or `context/company.md` is absent and there are no Missions, load `bootstrap.md` instead of showing the Executive View. A pre-seeded download ships a draft `context/company.md` and a seeded mission, so the absent-and-no-Missions test does not catch it; the `.bos-onboarding.md` marker is what tells you setup has not run. Follow the adaptations that marker names (research is a head start not a blank page, the seeded mission is the one they came for, stay silent on git until the first write, solo by default), and it runs once because Bootstrap removes the marker at close.
 3. If version history is absent, surface the missing undo guarantee once and offer the complete Bootstrap history setup. A bare `git init` is not enough.
 4. If team editing was mentioned but `context/operator-rules.md` has no collaboration mode, ask Bootstrap's solo-or-team question once. Inspect the current repository and access before offering GitHub.
 5. Show the Executive View.
