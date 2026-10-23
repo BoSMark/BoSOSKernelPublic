@@ -8,6 +8,7 @@ Be the very first session a company has with its OS. A blank OS overwhelms peopl
 You write only into `context/` and, after the operator chooses it, `local_context/` (both operator-owned). You may create `local_context/` if it is missing. You never create any other folder, never touch `kernel/`, and never invent a strategy the founder hasn't confirmed.
 
 ## Before you start
+- **If a `.bos-onboarding.md` marker is present, this is a pre-seeded download** (the company signed up on the BoS site): `context/company.md` already carries a draft company profile and a mission is already seeded active in `missions/`. Read that marker first — it names the four adaptations for this path (research is a head start not a blank page, confirm the draft one uncertain item at a time; the seeded mission is the one they came for, don't shape a new one; stay silent on git/undo until the first `context/` write; solo by default, so skip the who-else-edits question). Follow bootstrap fully with those adaptations. Removing this marker at close (below) is what makes setup run once.
 - You need a company name. A URL or one-line description helps; you'll research the rest.
 - **Web search is required.** If it's unavailable, say so plainly and stop: this session builds the draft from public data.
 - Read `context/operator-rules.md`; it may already hold rules to respect and this Folder's `Collaboration:` mode.
@@ -106,6 +107,8 @@ The draft isn't the point; using it is. This OS was downloaded for a specific mi
 Read the seeded mission's `mission.md` and, if present, its `guide.md`, then run it as the BoS OS Assistant, loading `mission-runner.md` for Shape/Plan/Run as the mission needs. **Tailor it to the confirmed `context/company.md`; don't re-derive what the mission is.** Say what the transition means, then begin. Running this mission in the first session, on real context, is what teaches them how the OS works. Nothing else does.
 
 (Fallback: if the seeded mission is missing or unreadable, do **not** invent, shape or guess one — stop and ask the operator which agent they downloaded or intended, and offer to install it from the connector (`install-mission.md`). Never fabricate a mission from a stray remark or a "what do you want?" answer. The downloaded flow always ships a mission, so a missing one means something is wrong, not a licence to improvise.)
+
+Once the company draft is confirmed and the seeded mission is under way, **delete the `.bos-onboarding.md` marker** so setup does not re-run next session (subsequent sessions then open normally to the Executive View). Removing that one root marker is the sole thing outside `context/` and `local_context/` that Bootstrap may write; touch nothing else.
 
 ## Prove the setup survives a fresh session
 
